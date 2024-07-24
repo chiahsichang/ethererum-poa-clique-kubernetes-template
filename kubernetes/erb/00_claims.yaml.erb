@@ -25,6 +25,7 @@ metadata:
   name: volume-<%= @Node_UserIdent %>
   namespace: default
 spec:
+  storageClassName: "nfs-client-for-observability"
   accessModes:
   - ReadWriteOnce
   resources:
@@ -41,6 +42,7 @@ metadata:
   name: volume-<%= @Node_UserIdent %>
   namespace: default
 spec:
+  storageClassName: "nfs-client-for-observability"
   accessModes:
   - ReadWriteOnce
   resources:
@@ -57,6 +59,7 @@ metadata:
     name: volume-ethmonitor
   name: volume-ethmonitor
 spec:
+  storageClassName: "nfs-client-for-observability"
   accessModes:
     - ReadWriteOnce
   resources:
@@ -71,6 +74,7 @@ metadata:
     name: volume-mongodb
   name: volume-mongodb
 spec:
+  storageClassName: "nfs-client-for-observability"
   accessModes:
     - ReadWriteOnce
   resources:

@@ -1,0 +1,1 @@
+curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x33ddf986da378d73d18f19d412020e7d66f42b4906aa81d331e7b6d9ee0836c3"],"id":1}' -H "Content-Type: application/json" http://192.168.4.130:8547

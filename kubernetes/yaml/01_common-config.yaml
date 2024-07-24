@@ -19,7 +19,7 @@ data:
         "eip158Block": 3,
         "byzantiumBlock": 4,
         "clique": {
-          "period": 15,
+          "period": 0,
           "epoch": 30000
         }
       },
@@ -54,20 +54,29 @@ spec:
     tier: backend
     name: mongodb-deployment
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb
   namespace: default
+  labels:
+    app: kuberneteth
+    tier: backend
+    name: mongodb-deployment    
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: kuberneteth
+      tier: backend
+      name: mongodb
   template:
     metadata:
-      name: mongodb-deployment
+      name: mongodb
       labels:
         app: kuberneteth
         tier: backend
-        name: mongodb-deployment
+        name: mongodb
     spec:
       containers:
       - name: mongodb
