@@ -1,1 +1,13 @@
-curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x33ddf986da378d73d18f19d412020e7d66f42b4906aa81d331e7b6d9ee0836c3"],"id":1}' -H "Content-Type: application/json" http://192.168.4.130:8547
+#!/bin/bash
+
+# 取得第一個參數作為交易哈希
+txhash=$1
+
+# 取得第二個參數作為主機地址
+host=$2
+
+# 取得第三個參數作為端口號
+port=$3
+
+# 發送請求
+curl -X POST --data "{\"jsonrpc\":\"2.0\",\"method\":\"eth_getTransactionByHash\",\"params\":[\"$txhash\"],\"id\":1}" -H "Content-Type: application/json" http://$host:$port
